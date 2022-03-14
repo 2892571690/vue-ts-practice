@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    // "suppressImplicitAnyIndexErrors": true, //解决用字符串做下标报错
+    "skipLibCheck": true, //解决打包报'vue-tsc --noEmit && vite build'的错误，忽略所有的声明文件(*.d.ts)的检查类型
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "exclude": ["node_modules"] //ts排除的文件
+}
+
+/*
+"skipLibCheck": true,//解决打包报'vue-tsc --noEmit && vite build'的错误，忽略所有的声明文件(*.d.ts)的检查类型
+
+解决页面引入Ts文件，'@/**'出现红色下滑线
+"baseUrl": ".",
+"paths": {
+  "@/*":[
+    "src/*"
+  ]
+}
+
+"exclude": ["node_modules"],//ts排除的文件
+*/
